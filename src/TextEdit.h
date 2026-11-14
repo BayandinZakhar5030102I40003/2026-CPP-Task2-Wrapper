@@ -15,7 +15,7 @@ class TextEdit {
   TextEdit(TextEdit&& rhs) noexcept;
   TextEdit& operator=(TextEdit&& rhs) noexcept;
 
-  std::string replace_words(const std::string& text,
+ std::string replace_words(const std::string& text,  
                             const std::string& old_word,
                             const std::string& new_word) const;
 

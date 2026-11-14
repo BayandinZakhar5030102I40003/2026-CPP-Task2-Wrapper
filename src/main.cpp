@@ -9,7 +9,7 @@
 
 class Subject {
  public:
-  int func(int arg1, int arg2) const { return arg1 + arg2 + val; }
+  [[nodiscard]] int func(int arg1, int arg2) const { return arg1 + arg2 + val; }
 
  private:
   int val{0};
@@ -21,7 +21,9 @@ int main() {
     Wrapper wrapper(&subj, &Subject::func, {{"arg1", 0}, {"arg2", 0}});
     Engine engine;
     engine.register_comand(&wrapper, "comand_name");
-    std::cout << engine.execute("comand_name", {{"arg1", 4}, {"arg2", 5}})
+    constexpr int a = 4;
+    constexpr int b = 5;
+    std::cout << engine.execute("comand_name", {{"arg1", a}, {"arg2", b}})
               << "\n\n";
 
     TextEdit editor;
