@@ -21,9 +21,10 @@ int main() {
     Wrapper wrapper(&subj, &Subject::func, {{"arg1", 0}, {"arg2", 0}});
     Engine engine;
     engine.register_comand(&wrapper, "comand_name");
-    constexpr int a = 4;
-    constexpr int b = 5;
-    std::cout << engine.execute("comand_name", {{"arg1", a}, {"arg2", b}})
+    constexpr int arg1_val = 4;
+    constexpr int arg2_val = 5;
+    std::cout << engine.execute("comand_name",
+                                {{"arg1", arg1_val}, {"arg2", arg2_val}})
               << "\n\n";
 
     TextEdit editor;

@@ -49,7 +49,7 @@ TextEdit::~TextEdit() = default;
 TextEdit::TextEdit(TextEdit&& rhs) noexcept = default;
 TextEdit& TextEdit::operator=(TextEdit&& rhs) noexcept = default;
 
-std::string TextEdit::replace_words(const std::string& text,  // NOLINT
+std::string TextEdit::replace_words(const std::string& text,  
                                     const std::string& old_word,
                                     const std::string& new_word) const {
   if (old_word.empty() || pimpl == nullptr) {
